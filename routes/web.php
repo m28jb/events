@@ -24,3 +24,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/posts/{post}', [PostController::class, 'update'])->name('admin.posts.update');
     Route::delete('/admin/posts/{post}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
